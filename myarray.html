@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//  creating an array
+
+  let color = ["Red", "Green", "Blue"];
+   
+  console.log(color);
+
+//   access and modify array elements
+
+  let fruits = ["apple", "mango", "passion"];
+
+  console.log(fruits);
+
+  fruits[1] = "pear";
+
+  console.log(fruits);
+
+//   determine the length of an array
+
+   let number = [56,78,78.98,765,234,54,47,7,11];
+
+   console.log(number);
+
+   console.log(number.length);
+
+//    use .pop()
+   
+    let languages = ["English","Kiswahili", "Maths"];
+
+    console.log(languages);
+
+    languages.pop()
+
+    console.log(languages);
+
+
+//  question 2
+    let sourceArray = ["max","joe","ken","wesley", "dennis"];
+    console.log(sourceArray);
+     extractedarray = sourceArray.slice(2,5);
+
+    console.log(extractedarray);
+
+   extractedarray.splice(0,3,"x","y","z");
+   console.log(extractedarray);
+// question 1
+
+let place = ["kenya", "zanzibar", "rwanda", "burundi"];
+let place2 = ["nairobi", "kisumu", "meru"];
+let allplaces = place.concat(place2);
+console.log(allplaces);
+allplaces.shift();
+console.log(allplaces);
+
+
+
+
+
+    </script>
+</body>
+</html>
