@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myJson = '{"name":"John", "age":30, "car":null}';
+      myObj = JSON.parse(myJson);
+      console.log(myObj["name"]);
+      // document.getElementById("demo").innerHTML = myObj.age;
+      let students = {
+        pp1: ["john", "moha", "kendi"],
+        pp2: ["mike", "ann", "jay"],
+      };
+      console.log(students["pp2"][1]);
+
+      /* create  an object  that would  be used to store voter registration details from IEBC.
+         ensure that you have name, county, subcounty, ward.
+         the object should be able to accommodate 18million voters. add at least 3 voters*/
+
+      // Voter registration details object
+      let voterRegistration = {
+        "4567487394": {"name":"Ken Kivuti","county": "Nairobi","subcounty": "Westlands","ward" :"Kangemi"},
+        "4567487395" : {"name": "ivy maundu","county": "Kiambu","subcounty": "Thika","ward": "Gatundu" },
+       "4567487391" : {"name" :"ropy kevin","county":"kajiado", "subcounty":"kitengela","ward":"kiserian"}
+      };
+
+      
+
+
+      console.log(voterRegistration["4567487394"])
+    </script>
+  </body>
+</html>
