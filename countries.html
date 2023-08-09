@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="myforloops.js"></script>
+    <script>
+        // console.log(countries)
+        let data ={
+            "0-50":0,
+            "50-100":0,
+            "100+":0
+        }
+        for(i=0;i<countries.length;i++){
+            if(countries[i].population<=50000000){
+                data["0-50"]++;
+            }else if(countries[i].population>=50000000&&countries[i].population<=100000000){
+                data["50-100"]++
+            }else{
+                data["100+"]++
+                }
+        }
+        console.log(data["0-50"])
+        console.log(data["50-100"])
+        console.log(data["100+"])
+    </script>
+    if(c.tolowercase().trim().chartat(0)=="n")
+</body>
+</html>
