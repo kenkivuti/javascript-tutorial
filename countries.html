@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script src="myforloops.js"></script>
     <script>
-        // console.log(countries)
-        let data ={
-            "0-50":0,
-            "50-100":0,
-            "100+":0
+      // console.log(countries)
+      let data = [];
+      let Data = [];
+      let DAta = [];
+      for (i = 0; i < countries.length; i++) {
+        if (countries[i]["population"] < 50000000) {
+          data.push(countries[i]);
+        } else if (
+          countries[i]["population"] > 50000000 &&
+          countries[i]["population"] <= 100000000
+        ) {
+          Data.push(countries[i]);
+        }else{
+            DAta.push(countries[i])
         }
-        for(i=0;i<countries.length;i++){
-            if(countries[i].population<=50000000){
-                data["0-50"]++;
-            }else if(countries[i].population>=50000000&&countries[i].population<=100000000){
-                data["50-100"]++
-            }else{
-                data["100+"]++
-                }
-        }
-        console.log(data["0-50"])
-        console.log(data["50-100"])
-        console.log(data["100+"])
+      }
+      console.log(data.length);
+      console.log(Data.length);
+      console.log(DAta.length);
     </script>
     if(c.tolowercase().trim().chartat(0)=="n")
-</body>
+  </body>
 </html>
+else
+if(countries[i]["population"]>=50000000&&countries[i].population<=100000000){
+data["50-100"]++ }else{ data["100+"]++ }
