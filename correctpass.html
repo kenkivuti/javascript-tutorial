@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Write a program input a password. Give them only 4 attempts to check the passwords entered against “admin@123”.
+         If the password is correct access is granted. After you show them a message , the account is blocked.*/
+
+         let pass = "admin@123";
+         let attempts = 0;
+         for(i = 0; i < 4; i++){
+            let input =prompt('enter password')
+            if(input==pass){
+                console.log("access Granted ")
+                break;
+
+            }else{
+                
+                console.log("wrong password"+(4-attempts[i])+"attempts remaining");
+
+            }
+        if(attempts[i]==4){
+            console.log("ac blocked")
+        }
+        
+        }
+
+    </script>
+</body>
+</html>
