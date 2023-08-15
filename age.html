@@ -16,8 +16,12 @@ Once you learn functions,revisit this and write this code inside a function.*/
     let dateofbirth = new Date(prompt("enter your year , month , date of birth"));
     
     let years = today.getFullYear() - dateofbirth.getFullYear();
-    let months = today.getMonth() - dateofbirth.getMonth();
-    let days = today.getDate() - dateofbirth.getDate(); 
+    let months = (today.getMonth() - dateofbirth.getMonth());
+    let days = (today.getDate() - dateofbirth.getDate()); 
+
+    if(months < 1 ){
+        console.log(months + 12)
+    }
    
     console.log("your" , years ,"years" ,months ,"months", days ,"days", "old" )
 
