@@ -7,8 +7,17 @@
   </head>
   <body>
     <script>
-      function NHIF() {
-        let NHIF = 0;
+       function forgrossalary(basicsalary,benefits){
+             grossalary = basicsalary + benefits;
+             return grossalary;
+       }
+       let totalgross = forgrossalary(
+        parseInt(prompt("enter basicsalary")),
+        parseInt(prompt("enter benefits"))
+       )
+       
+      function forNHIF(basicsalary,benefits) {
+        let NHIFContribution = 0;
         if (grossalary <= 5999) {
           "NHIFContribution: " + 150;
         } else if (grossalary >= 6000 && grossalary <= 7999) {
@@ -44,8 +53,29 @@
         } else {
           "NHIFContribution: " + 1700;
         }
-        return grossalary;
-        return NHIF;
+        return NHIFContribution;
+      }
+
+      function forNSSF(grossalary,NSSFrate=0.06){
+        let NSSF= grossalary * 0.06;
+
+        if(grossalary < 18000){
+            'NSSF:'+NSSF;
+         }else{
+             NSSF =(18000 * 0.06);
+            "NSSF" + NSSF
+         }
+         return NSSF;
+      }
+
+      function forNHDF(grossalary,NHDFrate=0.015){
+        let NHDF = grossalary * 0.015;
+        "NHDF:"+ NHDF;
+        return NHDF;
+      }
+      function forTaxableIncome(grossalary,NSSF,NHDF){
+        let taxableincome = grossalary -(NSSF + NHDF);
+       return taxableincome;
       }
     </script>
   </body>

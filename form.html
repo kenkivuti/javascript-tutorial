@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aqua;
+      }
+      .part1 {
+        position: absolute;
+        right: 50%;
+        top: 10%;
+      }
+
+      .part2 {
+        position: absolute;
+        top: 20%;
+        right: 70%;
+      }
+      .btn {
+        position: absolute;
+        right: 45%;
+        top: 10%;
+      }
+      .group{
+        position: absolute;
+        top: 17%;
+        left: 8%;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="myform">
+      <div class="part1">
+        <label for="basicsalary">Your basicsalary</label>
+        <input
+          type="text"
+          id="basicsalary"
+          name="basicsalary"
+          placeholder="enter your basicsalary"
+        />
+
+        <label for="benefits">your benefits</label>
+        <input
+          type="text"
+          id="benefits"
+          name="benefits"
+          placeholder="enter your benefits"
+        />
+      </div>
+      <br />
+      <div class="btn">
+        <input type="submit" />
+      </div>
+      <table class="group" border="4">
+        <thead>
+           <tr>
+              <th>Description</th>
+              <th>Results</th>
+              
+              
+           </tr>
+        </thead>
+        <tbody>
+             <tr>
+              
+              <td>basicsalary</td>
+              <td> </td>
+              
+             </tr>
+             <tr>
+              
+              <td>NSSF TIER 1
+                <br>
+                  NSSF TIER 2
+              </td>
+              <td></td>
+              
+             </tr>
+             <tr>
+            
+              <td>Final P.A.Y.E</td>
+              <td> </td>
+            
+             </tr>
+             <tr>
+              
+              <td>NHIF</td>
+              <td> </td>
+              
+             </tr>
+             <tr>
+              
+                <td>NHDF</td>
+                <td> </td>
+                
+               </tr>
+               <tr>
+              
+                <td>Net pay</td>
+                <td> </td>
+                
+               </tr>
+        </tbody>
+
+     </table>
+    </form>
+  </body>
+</html>
