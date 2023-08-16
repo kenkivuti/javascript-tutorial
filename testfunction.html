@@ -15,6 +15,7 @@
         parseInt(prompt("enter basicsalary")),
         parseInt(prompt("enter benefits"))
        )
+    //    calculate nhif
        
       function forNHIF(basicsalary,benefits) {
         let NHIFContribution = 0;
@@ -55,9 +56,10 @@
         }
         return NHIFContribution;
       }
+    //   calculate nssf
 
       function forNSSF(grossalary,NSSFrate=0.06){
-        let NSSF= grossalary * 0.06;
+        // let NSSF= grossalary * 0.06;
 
         if(grossalary < 18000){
             'NSSF:'+NSSF;
@@ -67,16 +69,22 @@
          }
          return NSSF;
       }
+    //   calculate nhdf
 
       function forNHDF(grossalary,NHDFrate=0.015){
         let NHDF = grossalary * 0.015;
         "NHDF:"+ NHDF;
         return NHDF;
       }
+    //   calculate taxableincome
       function forTaxableIncome(grossalary,NSSF,NHDF){
         let taxableincome = grossalary -(NSSF + NHDF);
        return taxableincome;
       }
+
+      taxableincome = forTaxableIncome(totalgross,
+      forNSSF(totalgross),
+      )
     </script>
   </body>
 </html>
