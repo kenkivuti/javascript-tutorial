@@ -1,87 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        /*Write a program that takes input of someone's basic salary and benefits, 
+      /*Write a program that takes input of someone's basic salary and benefits, 
         adds them to find the gross salary then uses  the gross salary to find the NHIF.*/
 
+      let basicsalary = parseFloat(prompt("enter your basic salary"));
+      let benefit = parseFloat(prompt("enter your benefit"));
 
-        let basicsalary = parseFloat(prompt("enter your basic salary"));
-        let benefit = parseFloat(prompt("enter your benefit"));
+      grossalary = basicsalary + benefit;
+      console.log(grossalary);
 
-        grossalary = basicsalary + benefit
-        console.log(grossalary)
-
-        if( grossalary <= 5999){
-          console.log( "NHIFContribution: " + 150)  
-        }else if(grossalary >= 6000 && grossalary <= 7999){
-            console.log( "NHIFContribution: " + 300)
-        }else if(grossalary >= 8000 && grossalary <= 11999){
-            console.log( "NHIFContribution: " + 400)
-        }else if(grossalary >= 12000 && grossalary <= 14999){
-            console.log( "NHIFContribution: " + 500)
-        }else if(grossalary >= 15000 && grossalary <= 19999){
-            console.log( "NHIFContribution: " + 600)
-        }else if(grossalary >= 20000 && grossalary <= 24999){
-            console.log( "NHIFContribution: " + 750)
-        }else if(grossalary >= 25000 && grossalary <= 29999){
-            console.log( "NHIFContribution: " + 850)
-        }else if(grossalary >= 30000 && grossalary <= 34999){
-            console.log( "NHIFContribution: " + 900)
-        }else if(grossalary >= 35000 && grossalary <= 39999){
-            console.log( "NHIFContribution: " + 950)
-        }else if(grossalary >= 40000 && grossalary <= 44999){
-            console.log( "NHIFContribution: " + 1000)
-        }else if(grossalary >= 45000 && grossalary <= 49999){
-            console.log( "NHIFContribution: " + 1100)
-        }else if(grossalary >= 50000 && grossalary <= 59999){
-            console.log( "NHIFContribution: " + 1200)
-        }else if(grossalary >= 60000 && grossalary <= 69999){
-            console.log( "NHIFContribution: " + 1300)
-        }else if(grossalary >= 70000 && grossalary <= 79999){
-            console.log( "NHIFContribution: " + 1400)
-        }else if(grossalary >= 80000 && grossalary <= 89999){
-            console.log( "NHIFContribution: " + 1500)
-        }else if(grossalary >= 90000 && grossalary <= 99999){
-            console.log( "NHIFContribution: " + 1600)
-        }else{
-            console.log("NHIFContribution: " + 1700 )
-        }
-        /*Continue with the program above, then use  the gross salary to find the NSSF. 
+      if (grossalary <= 5999) {
+        console.log(NHIFContribution + 150);
+      } else if (grossalary >= 6000 && grossalary <= 7999) {
+        console.log(NHIFContribution + 300);
+      } else if (grossalary >= 8000 && grossalary <= 11999) {
+        console.log(NHIFContribution + 400);
+      } else if (grossalary >= 12000 && grossalary <= 14999) {
+        console.log(NHIFContribution + 500);
+      } else if (grossalary >= 15000 && grossalary <= 19999) {
+        console.log(NHIFContribution + 600);
+      } else if (grossalary >= 20000 && grossalary <= 24999) {
+        console.log(NHIFContribution + 750);
+      } else if (grossalary >= 25000 && grossalary <= 29999) {
+        console.log(NHIFContribution + 850);
+      } else if (grossalary >= 30000 && grossalary <= 34999) {
+        console.log(NHIFContribution + 900);
+      } else if (grossalary >= 35000 && grossalary <= 39999) {
+        console.log(NHIFContribution + 950);
+      } else if (grossalary >= 40000 && grossalary <= 44999) {
+        console.log(NHIFContribution + 1000);
+      } else if (grossalary >= 45000 && grossalary <= 49999) {
+        console.log(NHIFContribution + 1100);
+      } else if (grossalary >= 50000 && grossalary <= 59999) {
+        console.log(NHIFContribution + 1200);
+      } else if (grossalary >= 60000 && grossalary <= 69999) {
+        console.log(NHIFContribution + 1300);
+      } else if (grossalary >= 70000 && grossalary <= 79999) {
+        console.log(NHIFContribution + 1400);
+      } else if (grossalary >= 80000 && grossalary <= 89999) {
+        console.log(NHIFContribution + 1500);
+      } else if (grossalary >= 90000 && grossalary <= 99999) {
+        console.log(NHIFContribution + 1600);
+      } else {
+        console.log(NHIFContribution + 1700);
+      }
+      /*Continue with the program above, then use  the gross salary to find the NSSF. 
 To find the Kenya NSSF Rate using. Compute NSSF using 6% of the Gross Salary. BUT ONLY A MAXIMUM OF 18,000 CAN BE USED IN NSSF. */
-         if(grossalary < 18000){
-            let NSSF= grossalary * 0.06;
-            console.log('nssf:'+NSSF);
-         }else{
-             NSSF =(18000 * 0.06);
-            console.log("NSSF" + NSSF)
-         }
-/*Continue with the same program and calculate an individual’s NHDF using:
+      if (grossalary < 18000) {
+        let NSSF = grossalary * 0.06;
+        console.log("nssf:" + NSSF);
+      } else {
+        NSSF = 18000 * 0.06;
+        console.log("NSSF" + NSSF);
+      }
+      /*Continue with the same program and calculate an individual’s NHDF using:
  i.e NHDF = gross_salary -  0.015*/
-         
-        let NHDF = grossalary * 0.015;
-        console.log("NHDF:"+ NHDF);
-/*Calculate the taxable income.
+
+      let NHDF = grossalary * 0.015;
+      console.log("NHDF:" + NHDF);
+      /*Calculate the taxable income.
 i.e taxable_income = gross salary - (NSSF + NHDF)*/
-      let taxableincome = grossalary -(NSSF + NHDF);
-        console.log("TI :" +taxableincome);
- /*continue with the same program and find the person's PAYEE using the taxable income above.*/
-          
-        if(grossalary >= 0 && grossalary <= 24000){
-            let PAYEE = (24000*0.1) - (2400)
-            console.log("PAYEE :"+ PAYEE )}
-        else if(grossalary > 24000 && grossalary <= 32333){
-            PAYEE = ((24000*0.1)+(8333*0.25))
-            console.log("PAYEE :" + PAYEE )
-        }else{
-            PAYEE = taxableincome*0.3 
-            console.log("PAYE :" + PAYEE )
-        }
+      let taxableincome = grossalary - (NSSF + NHDF);
+      console.log("TI :" + taxableincome);
+      /*continue with the same program and find the person's PAYEE using the taxable income above.*/
+
+      if (grossalary >= 0 && grossalary <= 24000) {
+        let PAYEE = 24000 * 0.1 - 2400;
+        console.log("PAYEE :" + PAYEE);
+      } else if (grossalary > 24000 && grossalary <= 32333) {
+        PAYEE = 24000 * 0.1 + 8333 * 0.25;
+        console.log("PAYEE :" + PAYEE);
+      } else {
+        PAYEE = taxableincome * 0.3;
+        console.log("PAYE :" + PAYEE);
+      }
     </script>
-</body>
+  </body>
 </html>

@@ -7,85 +7,90 @@
   </head>
   <body>
     <script>
-       function forgrossalary(basicsalary,benefits){
-             grossalary = basicsalary + benefits;
-             return grossalary;
-       }
-       let totalgross = forgrossalary(
+      function forgrossalary(basicsalary, benefits) {
+        grossalary = basicsalary + benefits;
+        return grossalary;
+      }
+      let totalgross = forgrossalary(
         parseInt(prompt("enter basicsalary")),
         parseInt(prompt("enter benefits"))
-       )
-    //    calculate nhif
-       
-      function forNHIF(basicsalary,benefits) {
-        let NHIFContribution = 0;
+      );
+      //    calculate nhif
+
+      function forNHIF(basicsalary, benefits) {
         if (grossalary <= 5999) {
-          "NHIFContribution: " + 150;
+          NHIFContribution = 150;
         } else if (grossalary >= 6000 && grossalary <= 7999) {
-          "NHIFContribution: " + 300;
+          NHIFContribution = 300;
         } else if (grossalary >= 8000 && grossalary <= 11999) {
-          "NHIFContribution: " + 400;
+          NHIFContribution = 400;
         } else if (grossalary >= 12000 && grossalary <= 14999) {
-          "NHIFContribution: " + 500;
+          NHIFContribution = 500;
         } else if (grossalary >= 15000 && grossalary <= 19999) {
-          "NHIFContribution: " + 600;
+          NHIFContribution = 600;
         } else if (grossalary >= 20000 && grossalary <= 24999) {
-          "NHIFContribution: " + 750;
+          NHIFContribution = 750;
         } else if (grossalary >= 25000 && grossalary <= 29999) {
-          "NHIFContribution: " + 850;
+          NHIFContribution = 850;
         } else if (grossalary >= 30000 && grossalary <= 34999) {
-          "NHIFContribution: " + 900;
+          NHIFContribution = 900;
         } else if (grossalary >= 35000 && grossalary <= 39999) {
-          "NHIFContribution: " + 950;
+          NHIFContribution = 950;
         } else if (grossalary >= 40000 && grossalary <= 44999) {
-          "NHIFContribution: " + 1000;
+          NHIFContribution = 1000;
         } else if (grossalary >= 45000 && grossalary <= 49999) {
-          "NHIFContribution: " + 1100;
+          NHIFContribution = 1100;
         } else if (grossalary >= 50000 && grossalary <= 59999) {
-          "NHIFContribution: " + 1200;
+          NHIFContribution = 1200;
         } else if (grossalary >= 60000 && grossalary <= 69999) {
-          "NHIFContribution: " + 1300;
+          NHIFContribution = 1300;
         } else if (grossalary >= 70000 && grossalary <= 79999) {
-          "NHIFContribution: " + 1400;
+          NHIFContribution = 1400;
         } else if (grossalary >= 80000 && grossalary <= 89999) {
-          "NHIFContribution: " + 1500;
+          NHIFContribution = 1500;
         } else if (grossalary >= 90000 && grossalary <= 99999) {
-          "NHIFContribution: " + 1600;
+          NHIFContribution = 1600;
         } else {
-          "NHIFContribution: " + 1700;
+          NHIFContribution = 1700;
         }
         return NHIFContribution;
       }
-    //   calculate nssf
+      console.log("nhif :" + forNHIF());
+      //   calculate nssf
 
-      function forNSSF(grossalary,NSSFrate=0.06){
-        // let NSSF= grossalary * 0.06;
+      function forNSSF(grossalary, NSSFrate = 0.06) {
+        let NSSF = grossalary * 0.06;
 
-        if(grossalary < 18000){
-            'NSSF:'+NSSF;
-         }else{
-             NSSF =(18000 * 0.06);
-            "NSSF" + NSSF
-         }
-         return NSSF;
+        if (NSSF > 0 && nssf_pay <= 18000) {
+          NSSF = gross_salary * 0.06;
+        } else {
+          NSSF = 18000;
+        }
+        return NSSF;
       }
-    //   calculate nhdf
 
-      function forNHDF(grossalary,NHDFrate=0.015){
+      console.log("nssf :" + NSSF());
+      //   calculate nhdf
+
+      function forNHDF(grossalary, NHDFrate = 0.015) {
         let NHDF = grossalary * 0.015;
-        "NHDF:"+ NHDF;
+        "NHDF:" + NHDF;
         return NHDF;
       }
-    //   calculate taxableincome
-      function forTaxableIncome(grossalary,NSSF,NHDF){
-        let taxableincome = grossalary -(NSSF + NHDF);
-       return taxableincome;
+      console.log("nhdf :" + NHDF());
+      //   calculate taxableincome
+      function forTaxableIncome(grossalary, NSSF, NHDF) {
+        let taxableincome = grossalary - (NSSF + NHDF);
+        return taxableincome;
       }
 
-      taxableincome = forTaxableIncome(totalgross,
-      forNSSF(totalgross),
-      forNHDF(totalgross)
-      )
+      taxableincome = forTaxableIncome(
+        totalgross,
+        forNSSF(totalgross),
+        forNHDF(totalgross)
+      );
+
+      console.log("ti  :" + taxableincome);
     </script>
   </body>
 </html>
