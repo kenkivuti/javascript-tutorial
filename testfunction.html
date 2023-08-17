@@ -18,7 +18,7 @@
       console.log("gross :" + totalgross)
       //    calculate nhif
 
-      function forNHIF(basicsalary, benefits) {
+      function forNHIF(grossalary) {
         if (grossalary <= 5999) {
           NHIFContribution = 150;
         } else if (grossalary >= 6000 && grossalary <= 7999) {
@@ -54,15 +54,20 @@
         } else {
           NHIFContribution = 1700;
         }
-        return NHIFContribution;
+        return NHIFContribution=0
       }
-      console.log("nhif :" + forNHIF());
+
+      let calcnhif=forNHIF(totalgross);
+
+      
+
+    
       //   calculate nssf
 
-      function forNSSF(totalgross, NSSFrate = 0.06) {
-        let NSSF = grossalary* 0.06;
+      function forNSSF(grossalary, NSSFrate = 0.06) {
+        let NSSF = grossalary * 0.06;
 
-        if (NSSF <= 18000) {
+        if (grossalary <= 18000) {
           NSSF = grossalary * 0.06;
         } else {
           NSSF = 18000 * 0.06;
@@ -70,14 +75,17 @@
         return NSSF;
       }
 
-      console.log("nssf :" + forNSSF());
+      let calcnssf= forNSSF(totalgross, NSSFrate = 0.06);
+
+      console.log("nssf :" + calcnssf)
       //   calculate nhdf
 
-      function forNHDF(totalgross,NHDFrate = 0.015){
+      function forNHDF(totalgross,NHDFrate = 0.03){
         let NHDF = grossalary * 0.015;
         return NHDF;
       }
-      console.log("nhdf :" + forNHDF())
+      let calcnhdf = forNHDF(totalgross,NHDFrate =0.03)
+      console.log("nhdf :" + calcnhdf)
       
       //   calculate taxableincome
       function forTaxableIncome(grossalary, NSSF, NHDF) {
@@ -85,13 +93,37 @@
         return taxableincome;
       }
 
-      taxableincome = forTaxableIncome(
+      let taxableincome= forTaxableIncome(
         totalgross,
         forNSSF(totalgross),
         forNHDF(totalgross)
       );
 
       console.log("ti  :" + taxableincome);
+
+      function forpayee(taxableincome){
+        tx = 0;
+        if (taxableincome > 0 && taxableincome <= 24000) {
+          tx = ((24000 * 0.1) - 2400)
+      } else if (taxableincome > 24000 && taxableincome <= 32333) {
+        tx = ((taxableincome * 0.1) + (8333 * 0.25)- 2400);
+        
+      } else {
+        tx = ((24000 * 0.01) +(8333 * 0.25) +((taxableincome - 32333) * 0.3)- 2400);
+         return tx;
+      
+      }
+      }
+
+      let calcpayee = forpayee(taxableincome)
+      console.log("payee :" + calcpayee)
+
+      function fornet(grossalary,NHDF,tx,NHIFContribution){
+        netpay = grossalary - (NHDF + NHIFContribution + tx)
+        return netpay;
+      }
+      let calcnetpay =  fornet(totalgross,calcnhdf,calcpayee,calcnhif)
+      console.log(calcnetpay)
     </script>
   </body>
 </html>
